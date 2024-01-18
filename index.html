@@ -1,0 +1,857 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Maineliebereveal</title>
+		<script
+  			src="https://code.jquery.com/jquery-3.7.1.js"
+		 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  			crossorigin="anonymous"></script>
+
+		<style>
+			.supercontainer { 
+				position: fixed;
+				background-image: url("images/lostilos.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				width: 99%;
+				height: 100%;
+				border-radius: 0.5%;
+			}
+
+			#intro {
+				
+				position: fixed;
+				background: rgba(255, 167,0 ,0.8);
+				align-items: center;
+				width: 98%;
+				height: 20%;
+				font-family: 'Comic Sans';
+				text-align: center;
+				border-radius: 1em;
+				top: 30%;
+				padding-bottom: 2em;
+				color: rgb(0, 0, 0);
+				font-size: 1.5em;
+				left: 1.5%;
+				
+				
+			}
+			.grid-container {
+				position: fixed;
+				display: grid;
+				grid-template-columns: auto auto auto auto auto;
+				column-gap: 5px;
+				padding-right: 0.5em;
+				top: 65%;
+				
+			}
+			.grid-container1 {
+				position: fixed;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr ;
+				row-gap: 2%;
+				column-gap: 1em;
+				align-items: center;
+				left: 18%;
+				visibility: hidden;
+				
+			}
+			.grid-container2 {
+				position: absolute;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr ;
+				row-gap: 2%;
+				align-items: center;
+				column-gap: 1em;
+				left: 18%;
+				visibility: hidden;
+				
+			}
+			.grid-container3 {
+				position: fixed;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr ;;
+				row-gap: 10px;
+				column-gap: 2em;
+				left: 18%;
+				top: 1em;
+				visibility: hidden;
+				
+			}
+			.grid-container4 {
+				position: fixed;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr ;
+				row-gap: 10px;
+				column-gap: 2em;
+				left: 18%;
+				top: 1em;
+				visibility: hidden;
+				
+			}
+			.grid-container5 {
+				position: fixed;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr ;
+				row-gap: 10px;
+				column-gap: 2em;
+				left: 18%;
+				top: 1em;
+				visibility: hidden;
+				
+			}
+			.grid-item {
+				background-color: rgba(166, 164, 255, 1);
+				border: 1px solid ;
+				text-align: center;
+				padding: 1.5px;
+				font-size: 1.2em;
+				border-radius: 0.3em;
+				color: white;
+				width: 100%;
+				
+			}
+			.grid-item1 {
+				position: relative;
+				top: 10%;
+				background-color: rgba(210, 210, 210, 1);
+				border: 1px solid rgba(240, 240, 240, 0.8);
+				text-align: center;
+				font-size: 0.9em;
+				border-radius: 0.3em;
+				color: black;
+				height: 30em;
+				width: 40em;
+				
+			}
+			.grid-item2 {
+				background-color: rgba(210, 210, 210, 0.9);
+				border: 1px solid rgba(240, 240, 240, 0.8);
+				text-align: center;
+				padding: 1.5px;
+				font-size: 0.9em;
+				border-radius: 0.3em;
+				color: black;
+				position: relative;
+				top: 10%;
+				width: 40em;
+				height: 30em;
+
+			}
+			.grid-item3 {
+				background-color: rgba(210, 210, 210, 0.9);
+				border: 1px solid rgba(240, 240, 240, 0.8);
+				text-align: center;
+				padding: 1.5px;
+				font-size: 0.9em;
+				border-radius: 0.3em;
+				color: black;
+				position: relative;
+				top: 10%;
+				width: 40em;
+				height: 30em;
+				
+			}
+			.grid-item4 {
+				background-color: rgba(210, 210, 210, 0.9);
+				border: 1px solid rgba(240, 240, 240, 0.8);
+				text-align: center;
+				padding: 1.5px;
+				font-size: 0.9em;
+				border-radius: 0.3em;
+				color: black;
+				position: relative;
+				top: 10%;
+				width: 40em;
+				height: 30em;
+			}
+			.grid-item5 {
+				background-color: rgba(210, 210, 210, 0.9);
+				border: 1px solid rgba(240, 240, 240, 0.8);
+				text-align: center;
+				font-size: 0.9em;
+				width: 35em;
+				border-radius: 0.3em;
+				color: black;
+				position: relative;
+				top: 10%;
+				width: 40em;
+				height: 30em;
+				
+			}
+			#explication {
+				position: fixed;
+				bottom: 5%;
+				left: 49%;
+				width: 10em;
+				height: 3em;
+			}
+			#back {
+				position: fixed;
+				border: solid 1%;
+				
+			} 
+			#atras1 {
+				position: fixed;
+				left: 5em;
+				visibility: hidden;
+			}
+			#atras2 {
+				position: fixed;
+				left: 5em;
+				visibility: hidden;
+			}
+			#atras3 {
+				position: fixed;
+				left: 5em;
+				visibility: hidden;
+			}
+			#atras4 {
+				position: fixed;
+				left: 5em;
+				visibility: hidden;
+			}
+			#atras5 {
+				position: fixed;
+				left: 0,5em;
+				visibility: hidden;
+			}
+			#a {
+				visibility: hidden;
+				position: relative;
+			}
+
+			#b {
+				position: relative;
+				background-color: rgba(255, 27, 245, 0.7);
+				color: rgb(255, 255, 255);
+				visibility: hidden;
+			}
+			.c {
+				position: relative;
+				background-color: rgba(224, 230, 230, 0.5);
+				visibility: hidden;
+				color: rgba(53, 0, 239);
+			}
+			.d {
+				position: relative;
+				background-color: rgba(45, 93, 145, 0.5);
+				visibility: hidden;
+				color: yellow;
+			}
+			.e {
+				position: relative;
+				background-color: rgba(87, 233, 245, 0.5);
+				visibility: hidden;
+				color: white;
+			}
+			#fondo {
+				background-image: url('images/photosml/cdaup.jpg');
+				background-position: center center;
+				background-attachment: fixed;
+				background-size: 100% 100%;
+				height: 99%;
+				visibility: hidden;
+				border-radius: 0.3em;
+				border: solid 1px rgba(255, 196, 255, 0,8);
+			}
+			#alfinal {
+				background: rgba(173, 136, 186, 0.9);
+				border: solid 1px rgba(255, 196, 255, 0,8);
+				border-radius: 0.3em;
+				width: 21.5%;
+				height: 73%;
+				text-align: justify;
+				position: absolute;
+				padding: 1em 3em;
+				right: -3%;
+				top: 3em;
+				color: white;
+				font-size: 1.2em;
+				line-height: 2em;
+				visibility: hidden;
+			}
+			#revelation {
+				background-image: url('images/photosml/paracleme.jpg');
+				background-size: 100% 45em;
+				background-position: center center;
+				border: solid 1px rgba(255, 196, 255, 0,8);
+				border-radius: 0.3em;
+				width: 27.5%;
+				height: 39em;
+				padding: 3em 1em;
+				text-align: justify;
+				position: fixed;
+				left: 0.8em;
+				top: 4em;
+				color: white;
+				visibility: hidden;
+			}
+			#j {
+				text-align: center;
+				position: relative;
+				height: 2em;
+				top: 40% ;
+				left: -1.5%;
+				color: rgba(220, 226, 237, 0.1);
+				font-size: 0.7em;
+				visibility: hidden;
+			}
+			#clkfinal {
+				position: fixed;
+				width: 15%;
+				height: 2em;
+				bottom: 2em;
+				right: 1.5em;
+				visibility: hidden;
+			}
+			
+			#respuesta {
+				position: absolute;
+				text-align: center;
+				border: solid 1px rgba(180, 180, 180);
+				border-radius: 0.3em;
+				color: rgba(255, 201, 255);
+				background: rgba(238, 130, 238, 0.9);
+				text-emphasis: double-circle pink;
+				width: 5%;
+				height: auto;
+				font-size: 0.5em;
+				top:38em;
+				right:82em;
+				visibility: hidden;
+			}
+
+
+		@media only screen and (max-width: 800px) {
+
+			.supercontainer {
+				width: 47em;
+				height:140em;
+				position: absolute;
+				
+			}
+			#back { 
+				position: fixed;
+				width: 10%;
+				height: 2em;
+				top: 0.2em;
+			}
+			.grid-container { 
+				position: fixed;
+				top: 50%;
+				
+			}
+			.grid-container1 {
+				position: absolute;
+				display: grid;
+				grid-template-columns: 100%;
+				grid-template-rows: auto auto auto auto;
+				left: 22%;				
+				padding-right: 0.5em;
+				row-gap: 0.5em;
+			
+			}
+			.grid-container2 {
+				position: absolute;
+				display: grid;
+				grid-template-columns: 100%;
+				grid-template-rows: auto auto auto auto;
+				left: 22%;				
+				row-gap: 1px;
+				top:auto;
+			
+			}
+			.grid-container3 {
+				position: absolute;
+				display: grid;
+				grid-template-columns: 100%;
+				grid-template-rows: auto auto auto auto;
+				left: 22%;				
+				padding-right: 0.5em;
+				row-gap: 1px;
+			
+			}
+			.grid-container4 {
+				position: absolute;
+				display: grid;
+				grid-template-columns: 100%;
+				grid-template-rows: auto auto auto auto;
+				left: 22%;
+				top: 1%;				
+			
+			}
+			.grid-container5 {
+				position: absolute;
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: auto auto auto auto;
+				left: 22%;
+
+			
+			}
+			.grid-item5 { 
+				top: 1em;
+			}
+				
+			.grid-item4 { 
+				margin-top: 1em;
+				
+			}
+			.grid-item3 { 
+				margin-top: 1em;
+				
+			}
+			.grid-item2 { 
+				margin-top: 1em;
+				
+			}
+			.grid-item1 {
+				top: 1em;
+			}
+			#intro {
+				
+				background: rgba(255, 167,0 ,0.8);
+				align-items: center;
+				width: 98%;
+				height: 20%;
+				font-family: 'Comic Sans';
+				text-align: center;
+				border-radius: 1em;
+				top: 30%;
+				padding-bottom: 2em;
+				color: rgb(0, 0, 0);
+				font-size: 1.5em;
+				left: 1.5%;
+				
+				
+			}
+			#explication {
+				left: 41%;
+			}
+			
+			#alfinal {
+				width: 25%;
+				height: 65%;
+				position: fixed;
+				top: 4.5%;
+				font-size: 0.8em;
+				left: 20%;
+			}
+			#revelation {
+				height: 60%;
+				width: 40%;
+				background-size: 100% 68em;
+			}
+			#j {
+				top: 31%;
+			}
+			#respuesta {
+				position: fixed;
+				top: 45%;
+			}
+		}
+		
+		</style>
+	</head>
+	<body>
+	  <div class='supercontainer'>
+		<div id='intro'>
+			<h2>Bienvenido/as a esta aventura</h2>
+			<p>Estamos muy contentos de compartir con ustedes el avance del embarazo<br>
+			y en esta ocasion el sexo de nuestrx bebe</p>
+		</div>
+
+		<div class="grid-container">
+		<div class="grid-item" id='a'>
+			<p>En cada uno de los siguientes recuadros
+			 encontraras fotos del embarazo y del paisaje
+			 de La Palma.<br> Haz click en cada uno y esperamos que
+			 disfrutes, tanto como lo hacemos nosotros.</p>
+		</div>
+		<div class="grid-item b" id='b'>
+			<p>Desde antes que lo supieramos,<br>
+			   hasta hace unos dias, incluidas algunas fotitos de nuestro proceso</p>
+		</div>
+		<div class="grid-item c">
+			<p> Aqui podras encontrar fotitos de nuestrx bebe desde que nos enteramos 
+			hasta algunas semanas atras</p>
+		</div>
+		<div class="grid-item d">
+			<p>Y tambien una seccion dedicada a las mascotas de la casa. Es cierto que faltan 
+			unas cuantas, pero seran para otra ocasion</p>
+		</div>
+		<div class="grid-item e" >
+			<p> Este es el ultimo recuadro, donde encontraras un recopilado<br>
+				de fotos y el final del programa.</p>
+		</div>
+		</div>
+		<div class="grid-container1">
+			<div class="grid-item1 aa">
+				<img src="images/photosml/cdaup.jpg" width='100%' height='90%' id='cdup'>
+				<p> Una tarde con calima, desde las alturas de Cueva de Agua</p>
+				 				
+			</div>
+			<div class="grid-item1 ab">
+				<img src="images/photosml/cdagua.jpg" width='100%' height='90%' id='cdagua'>
+				<p>En el fondo se puede ver Cueva de Agua</p>
+				
+			</div>
+			<div class="grid-item1 ac">
+				<img src="images/photosml/puestasol.jpg" width='100%' height='90%' id='puestasol' >
+				<p>Puesta de sol desde la casa</p>
+				
+			</div>
+			<div class="grid-item1 ad ">
+				<img src="images/photosml/brenas.jpg" width='100%' height='90%' id='brenas' >
+				<p>Las Brenas, al este de La Palma, mirando hacia el Sur.</p>
+			</div>
+			
+		</div>
+		<div class="grid-container2">
+			<div class="grid-item2 aa">
+				<img src="images/photosml/visionup.jpg" width='100%' height='90%' id='visionup'>
+				<p> En Los Tilos, con una caida en vertical de aprox. 30 metros</p>
+				 				
+			</div>
+			<div class="grid-item2 ab">
+				<img src="images/photosml/tunel.jpg" width='100%' height='90%' id='tunel'>
+				<p>Este es un tunel de 50 metros, sin luz pero muy fresco.</p>
+				
+			</div>
+			<div class="grid-item2 ac">
+				<img src="images/photosml/liebe.jpg" width='100%' height='90%' id='liebe'>
+				<p>Aischa con paisaje de Los Tilos </p>
+				
+			</div>
+			<div class="grid-item2 ad ">
+				<img src="images/photosml/tene.jpg" width='100%' height='90%' id='tene'>
+				<p>Esta foto fue tomada en Tenerife, playas bonitas, pero muy peligrosas.</p>
+			</div>
+			
+		</div>
+		<div class="grid-container3">
+			<div class="grid-item3 aa">
+				<img src="images/photosml/bebea.jpg" width='100%' height='90%' id='bebea'>
+				<p> De las primeras fotitos que tenemos</p>
+				 				
+			</div>
+			<div class="grid-item3 ab">
+				<img src="images/photosml/bebeb.jpg" width='100%' height='90%' id='bebeb'>
+				<p>En muchas de sus apariciones, lo ha hecho chupandose un dedito.</p>
+				
+			</div>
+			<div class="grid-item3 ac">
+				<img src="images/photosml/bebee.jpg" width='100%' height='90%' id='bebee'>
+				<p>La foto mas actual, sin zoom.</p>
+				
+			</div>
+			<div class="grid-item3 ad ">
+				<img src="images/photosml/bebed.jpg" width='100%' height='90%' id='bebed'>
+				<p>La fotito mas actual que tenemos de nuestrx bebe.</p>
+			</div>
+			
+		</div>
+		<div class="grid-container4">
+			<div class="grid-item4 aa">
+				<img src="images/photosml/gallina2.jpg" width='100%' height='90%' id='gallina'>
+				<p> Esta gallina, de nombre Palomilla, tiene un plumaje muy particular, hermosa.</p>
+				 				
+			</div>
+			<div class="grid-item4 ab">
+				<img src="images/photosml/sheriff.jpg" width='100%' height='90%' id='sheriff'>
+				<p>Sheriff descansando en unos de sus sitios preferidos, surcando las olas.</p>
+				
+			</div>
+			<div class="grid-item4 ac">
+				<img src="images/photosml/cocino.jpg" width='100%' height='90%' id='cocino' >
+				<p>Proyecto concretado, nueva barbacoa lista para servicio.</p>
+				
+			</div>
+			<div class="grid-item4 ad ">
+				<img src="images/photosml/mlbebe.jpg" width='100%' height='90%' id='mlbebe' >
+				<p>Mencion honrosa a Culito, quien hasta el dia de hoy aun no regresa.</p>
+			</div>
+			
+		</div>
+		<div class="grid-container5">
+			<div class="grid-item5 ab">
+				<img src="images/photosml/lomada.jpg" width='100%' height='90%' id='lomada' >
+				<p class='parrafo'>En el horizonte se divisa Garafia</p>
+				
+			</div>
+			<div class="grid-item5 aa">
+				<video width='100%' height='90%' controls id='video' >
+				 <source src="images/photosml/bebevi.mp4" type="video/mp4">
+				</video>
+				<p>El videito que nos emociona un monton</p>
+			</div>
+			<div class="grid-item5 ac">
+				<img src="images/photosml/cabras.jpg" width='100%' height='90%' id='saltagrillo'>
+				<p class='parrafo'>Las cabras, pastoreando tranquilamente por la carretera</p>
+				
+			</div>
+			<div class="grid-item5 ad ">
+				<img src="images/photosml/saltagrillo.jpg" width='100%' height='90%' id='cabras' >
+				<p class='parrafo'>Un hermoso grillo descansando en la hoja de una higuera</p>
+			</div>
+			
+		</div>
+
+		<button id='explication'>Siguiente</button>
+		<button id='back'>Menu</button>
+		<div id='fondo'>
+			<button id='atras1'>Regresar</button>
+			<button id='atras2'>Regresar</button>
+			<button id='atras3'>Regresar</button>
+			<button id='atras4'>Regresar</button>
+			<button id='atras5'>Regresar</button>
+		</div>
+
+		<div id='alfinal'>
+			<p>
+				Queremos saludar y agradecer
+				a cada uno/a de ustedes  
+				por todos sus buenos deseos 
+				y buena energia.
+				Contarles que todo marcha bien,
+				estamos ansiosos de poder conocer
+				a nuestrx bebe, pero muy felices, 
+				disfrutando del proceso.
+
+				Esperamos sinceramente que hayan
+				disfrutado de las fotitos y que
+				sientan todo el carino que desde
+				aca les enviamos.
+				Que Dios les bendiga.<br>
+
+				Por ultimo, para conocer si es 
+				un o una bebe, debes investigar
+				dentro de esta pagina y alguna
+				pista encontraras, quizas si 
+				haces click lo logras, exito!
+				
+			</p>
+		</div>
+		<div id='revelation'>
+	        <p id='j'>bb</p>
+		</div>
+		<h1 id='respuesta'>Has encontrado la respuesta, la bebe sera una bella chica!</h1> 
+		<button id='clkfinal'>Finalizar</button>
+	  </div>
+		<script>
+			$('#explication').click(function() { $('.grid-item').css('visibility' , 'visible');
+								$(this).hide();
+								$('#intro').hide();
+                						$('#a, .e').animate({bottom : '15em'}, 'slow', 'linear');
+								$('#b, .c, .d').animate({bottom : '10em'}, 'slow', 'linear');
+								});
+			$('#a').on('click', function() { $('#a, #b, .c, .d, .e').css('visibility', 'hidden');
+							  $('.grid-container1, .grid-item1, #back, #atras1').css('visibility' , 'visible');
+							  $('.grid-container1').show();
+							  $('.grid-item1').show();
+							  $('#back').show();
+							  $('#atras1').hide();
+							  });
+			$('#b').on('click', (function() { $('#a, #b, .c, .d, .e').css('visibility', 'hidden');
+							  $('.grid-container2, #atras2').css('visibility' , 'visible');
+							  $('.grid-container2, .grid-item2').show();
+							  $('.grid-item2, #back').css('visibility', 'visible');
+							  $('#back').show();
+							  $('#atras2').hide();
+							  }));
+			$('.c').on('click', (function() { $('#a, #b, .c, .d, .e').css('visibility', 'hidden');
+							  $('.grid-container3, #atras3').css('visibility' , 'visible');
+							  $('.grid-container3, .grid-item3').show();
+							  $('.grid-item3, #back').css('visibility' , 'visible');
+							  $('#back').show();
+							  $('#atras3').hide();
+							  }));
+			$('.d').on('click', (function() { $('#a, #b, .c, .d, .e').css('visibility', 'hidden');
+							  $('.grid-container4, #atras4').css('visibility' , 'visible');
+							  $('.grid-container4, .grid-item4').show();
+							  $('.grid-item4, #back').css('visibility' , 'visible');
+							  $('#back').show();
+							  $('#atras4').hide();
+							  }));
+			$('.e').on('click', (function() { $('#a, #b, .c, .d, .e').css('visibility', 'hidden');
+							  $('.grid-container5, #clkfinal, #atras5 ').css('visibility' , 'visible');
+							  $('.grid-item5, #back').css('visibility' , 'visible');
+							  $('.grid-container5').show();
+							  $('.grid-item5, #back').show();
+							  $('#atras5').hide();
+							  $('#clkfinal').show();
+							  }));
+			$('#j').on('click', (function() { $('.grid-item5').hide();
+							  $('.grid-container5, #revelation, #alfinal').hide();
+							  $('#respuesta').css('visibility', 'visible');
+							  $('#respuesta, #back').show();
+							  $('#respuesta').animate({'width': '+=93.5%', 'left' : '1%', 
+							  			   'font-size': '2em', 'top': '40%'}, 'slow');
+		        			          $('#revelation').animate({'left': '-=22em'}, 'slow');
+		        				  $('#alfinal').animate({'left': '+=15%'}, 'slow');
+							  }));
+			$('#clkfinal').on('click', function() { $('#j, #revelation, #alfinal').show();
+								$('.grid-item5').hide();
+								$('.grid-container5').hide();
+							        $('#alfinal, #revelation, #j').css('visibility', 'visible');
+							        $('#clkfinal, #back').hide();
+		        					$('#revelation').animate({'left': '+=22em'}, 'slow');
+		        					$('#alfinal').animate({'left': '-=15%'}, 'slow');
+
+								});
+
+			$('#back').on('click', function() { 
+						$('#back, .grid-container1, .grid-container2').css('visibility', 'hidden');
+						$('.grid-container3, .grid-container4, .grid-container5').css('visibility', 'hidden');
+						$('#fondo, #clkfinal, #respuesta, #alfinal').css('visibility', 'hidden');
+						$('.grid-item1, .grid-item2, .grid-item3, .grid-item4, .grid-item5').css('visibility', 'hidden');
+						$('#a, #b, .c, .d, .e').css('visibility', 'visible');
+						$('#a, #b, .c, .d, .e').show();
+						$('#respuesta').animate({'width': '-=90%', 'left' : '-0.5em', 
+				       	  			         'font-size': '2em', 'top': '-6em'}, 'slow');
+						});
+			$('#atras1').on('click', (function() { $('.grid-item1').show();
+							     $('#fondo').hide();
+							     }));
+			$('#atras2').on('click', (function() { $('.grid-item2').show();
+							     $('#fondo').hide();
+							     }));
+			$('#atras3').on('click', (function() { $('.grid-item3').show();
+							     $('#fondo').hide();
+							     }));
+			$('#atras4').on('click', (function() { $('.grid-item4').show();
+							     $('#fondo').hide();
+							     }));
+			$('#atras5').on('click', (function() { $('.grid-item5, #clkfinal').show();
+							     $('#fondo').hide();
+							     }));
+			$('#cdup').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras1').show();
+						$('#fondo').css('background-image', "url('images/photosml/cdaup.jpg')");
+						$('#atras2, #atras3, #atras4, #atras5').hide();
+						});
+			$('#brenas').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo , #atras1').show();
+						$('#fondo').css('background-image', "url('images/photosml/brenas.jpg')");
+						$('#atras2, #atras3, #atras4, #atras5').hide();
+						});
+			$('#cdagua').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras1').show();
+						$('#fondo').css('background-image', "url('images/photosml/cdagua.jpg')");
+						$('#atras2, #atras3, #atras4, #atras5').hide();
+						});
+			$('#puestasol').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras1').show();
+						$('#fondo').css('background-image', "url('images/photosml/puestasol.jpg')");
+						$('#atras2, #atras3, #atras4, #atras5').hide();
+						});
+			$('#mlbebe').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras4').show();
+						$('#fondo').css('background-image', "url('images/photosml/mlbebe.jpg')");
+						$('#atras2, #atras3, #atras1, #atras5').hide();
+						});
+			$('#visionup').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras2').show();
+						$('#fondo').css('background-image', "url('images/photosml/visionup.jpg')");
+						$('#atras1, #atras3, #atras4, #atras5').hide();
+						});
+			$('#tunel').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras2').show();
+						$('#fondo').css('background-image', "url('images/photosml/tunel.jpg')");
+						$('#atras1, #atras3, #atras4, #atras5').hide();
+						});
+			$('#liebe').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras2').show();
+						$('#fondo').css('background-image', "url('images/photosml/liebe.jpg')");
+						$('#atras1, #atras3, #atras4, #atras5').hide();
+						});
+			$('#tene').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras2').show();
+						$('#fondo').css('background-image', "url('images/photosml/tene.jpg')");
+						$('#atras1, #atras3, #atras4, #atras5').hide();
+							       });
+			$('#bebea').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras3').show();
+						$('#fondo').css('background-image', "url('images/photosml/bebea.jpg')");
+						$('#atras2, #atras1, #atras4, #atras5').hide();
+							       });
+			$('#bebeb').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras3').show();
+						$('#fondo').css('background-image', "url('images/photosml/bebeb.jpg')");
+						$('#atras2, #atras1, #atras4, #atras5').hide();
+							       });
+			$('#bebee').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+						$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras3').show();
+						$('#fondo').css('background-image', "url('images/photosml/bebee.jpg')");
+						$('#atras2, #atras1, #atras4, #atras5').hide();
+							       });
+			$('#bebed').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+					               $('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						       $('#fondo, #atras3').show();
+						       $('#fondo').css('background-image', "url('images/photosml/bebed.jpg')");
+						       $('#atras2, #atras1, #atras4, #atras5').hide();
+							       });
+			$('#gallina').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+				       	        $('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						$('#fondo, #atras4').show();
+						$('#atras2, #atras3, #atras1, #atras5').hide();
+						$('#fondo').css('background-image', "url('images/photosml/gallina2.jpg')");
+							       });
+			$('#sheriff').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+				        $('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+					$('#fondo, #atras4').show();
+					$('#fondo').css('background-image', "url('images/photosml/sheriff.jpg')");
+					$('#atras2, #atras3, #atras1, #atras5').hide();
+							       });
+			$('#cocino').on('dblclick', function() { $('#fondo').css('visibility', 'visible');a
+						 $('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5').hide();
+						 $('#fondo, #atras4').show();
+						 $('#fondo').css('background-image', "url('images/photosml/cocino.jpg')");
+						 $('#atras2, #atras3, #atras1, #atras5').hide();
+							       });
+			$('#lomada').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+				       $('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5, #clkfinal').hide();		                      	   	       
+					   $('#fondo, #atras4').show();
+				       $('#fondo').css('background-image', "url('images/photosml/lomada.jpg')");
+				       $('#fondo, #atras5').show();
+				       $('#atras2, #atras3, #atras1, #atras4').hide();
+					});
+			$('#saltagrillo').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+					$('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5, #clkfinal').hide();
+					$('#fondo').show();
+					$('#fondo').css('background-image', "url('images/photosml/cabras.jpg')");
+					$('#atras5').show();
+					$('#atras2, #atras3, #atras1, #atras4').hide();
+					 });
+			$('#cabras').on('dblclick', function() { $('#fondo').css('visibility', 'visible');
+				       $('.grid-item1, .grid-item2,.grid-item3,.grid-item4,.grid-item5, #clkfinal').hide();
+				       $('#fondo').show();
+				       $('#fondo').css('background-image', "url('images/photosml/saltagrillo.jpg')");
+				       $('#atras5').show();
+				       $('#atras2, #atras3, #atras1, #atras4').hide();
+					});
+		</script>
+	</body>
+</html>
